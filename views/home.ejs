@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+
+    <section>
+        <p>Search by name</p>
+        <form action="/search" method="post">
+            <p>Search by ....</p>
+            <label for="">name</label>
+            <input type="radio" name="type" value="name" id=""> 
+            
+            <label for="">level</label>
+            <input type="radio" name="type" value="level" id="">
+            <button type="submit">Search</button>
+
+            <input type="text" name="text" id="">
+        </form>
+    </section>
+
+    <main id="home_main">
+      <% result.forEach (obj => { %>
+      <section>
+        <h2><%= obj.name %></h2>
+        <img src="<%= obj.img %>" alt="" />
+        <p><%= obj.level %></p>
+        <form action="/fav" method="POST">
+          <input type="hidden" name="name" value="<%= obj.name %>" />
+          <input type="hidden" name="img" value="<%= obj.img %>" />
+          <input type="hidden" name="level" value="<%= obj.level %>" />
+          <button type="submit">Add fo My Fav Page</button>
+        </form>
+      </section>
+      <% });%>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fav</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header></header>
+
+<main id="home_main">
+
+    <% result.forEach (obj => { %> 
+        <section>
+            <h2><%= obj.name %></h2>
+            <img src="<%= obj.img %>" alt="">
+            <p><%= obj.level %></p>
+            
+            <button><a href="/details/<%= obj.id %>">Details</a></button>
+        </section>
+    <% });%>
+
+</main>
+    
+</body>
+</html>
